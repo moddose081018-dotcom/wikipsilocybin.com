@@ -3,162 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Recent Events — WikiPsilocybin</title>
+    <title>Recent events — WikiPsilocybin</title>
     <meta name="description" content="Browse all recent events in psilocybin research, policy, and culture. Updated daily by AI-powered trend scouts.">
     <link rel="canonical" href="https://wikipsilocybin.com/events/">
     <style>
-        :root {
-            --bg: #ffffff; --bg-alt: #f8fafc; --text: #1e293b; --text-light: #64748b;
-            --border: #e2e8f0; --action: #7c3aed; --action-hover: #6d28d9;
-            --action-soft: #f5f3ff; --accent: #a78bfa; --success: #059669; --success-soft: #ecfdf5;
-            --gold: #d97706; --gold-soft: #fffbeb; --radius-lg: 16px; --radius-md: 10px; --radius-sm: 6px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06); --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-        }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        a { color: var(--action); text-decoration: none; transition: color 0.2s; }
+        body { font-family: 'Linux Libertine', Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 1.6; color: #202122; background: #f8f9fa; }
+        a { color: #0645ad; text-decoration: none; }
         a:hover { text-decoration: underline; }
-        img { max-width: 100%; height: auto; display: block; }
-        .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+        a:visited { color: #0b0080; }
 
-        .site-header { border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 100; }
-        .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: var(--text); letter-spacing: -0.02em; }
-        .logo:hover { text-decoration: none; }
-        .logo-mark { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--action), var(--accent)); }
-        .site-nav { display: flex; align-items: center; gap: 28px; }
-        .site-nav a { color: var(--text-light); font-size: 14px; font-weight: 500; }
-        .site-nav a:hover { color: var(--text); text-decoration: none; }
-        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
-        .hamburger svg { width: 24px; height: 24px; }
+        .site-top { background: #fff; border-bottom: 1px solid #a7d7f9; }
+        .site-top-inner { max-width: 960px; margin: 0 auto; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; }
+        .site-title { font-size: 18px; font-weight: normal; font-family: 'Linux Libertine', Georgia, serif; }
+        .site-title a { color: #202122; }
+        .site-title a:hover { text-decoration: none; }
+        .site-title small { display: block; font-size: 11px; color: #54595d; font-family: sans-serif; }
+        .site-nav { display: flex; gap: 16px; font-size: 12px; font-family: sans-serif; }
+        .site-nav a { color: #0645ad; }
 
-        .page-header { padding: 56px 0 40px; }
-        .page-header h1 { font-size: 36px; letter-spacing: -0.02em; margin-bottom: 12px; }
-        .page-header p { font-size: 18px; color: var(--text-light); max-width: 560px; }
+        .page-wrap { max-width: 960px; margin: 0 auto; background: #fff; border: 1px solid #a7d7f9; border-top: none; min-height: 80vh; }
+        .page-tabs { background: #fff; border-bottom: 1px solid #a7d7f9; padding: 0 16px; font-family: sans-serif; font-size: 12px; display: flex; gap: 0; }
+        .page-tabs a { display: inline-block; padding: 6px 12px; color: #0645ad; border-bottom: 2px solid transparent; }
+        .page-tabs a.active { border-bottom-color: #36c; font-weight: bold; color: #202122; }
 
-        .month-group { margin-bottom: 48px; }
-        .month-label { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .content { padding: 16px 24px 32px; }
 
-        .events-list { display: grid; gap: 16px; }
-        .event-row { display: grid; grid-template-columns: 120px 1fr; gap: 20px; padding: 16px 20px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg); transition: all 0.2s; align-items: center; }
-        .event-row:hover { border-color: var(--action); box-shadow: var(--shadow-sm); text-decoration: none; }
-        .event-row-date { font-size: 13px; color: var(--text-light); font-weight: 500; white-space: nowrap; }
-        .event-row-body { display: flex; align-items: center; gap: 12px; min-width: 0; }
-        .event-row-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 8px; border-radius: 999px; white-space: nowrap; flex-shrink: 0; }
-        .tag-research { background: var(--action-soft); color: var(--action); }
-        .tag-news { background: var(--success-soft); color: var(--success); }
-        .tag-culture { background: var(--gold-soft); color: var(--gold); }
-        .tag-policy { background: #fef2f2; color: #dc2626; }
-        .event-row-title { font-size: 15px; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .event-row:hover .event-row-title { color: var(--action); }
+        .page-title { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; font-weight: normal; line-height: 1.2; margin-bottom: 4px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+        .page-subtitle { font-size: 13px; color: #54595d; font-family: sans-serif; margin-bottom: 20px; font-style: italic; }
 
-        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--action); margin-top: 24px; }
+        h2 { font-family: 'Linux Libertine', Georgia, serif; font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 24px 0 10px; padding-bottom: 2px; }
+        p { margin-bottom: 10px; }
 
-        .site-footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 48px; }
-        .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 20px; }
-        .footer-brand { max-width: 280px; }
-        .footer-brand .logo { margin-bottom: 8px; }
-        .footer-brand p { font-size: 13px; color: var(--text-light); }
-        .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-        .footer-links a { font-size: 13px; color: var(--text-light); }
-        .copyright { width: 100%; text-align: center; font-size: 12px; color: var(--text-light); margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .month-heading { font-family: 'Linux Libertine', Georgia, serif; font-size: 19px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 20px 0 10px; padding-bottom: 2px; }
 
-        @media (max-width: 768px) {
-            .site-nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); flex-direction: column; padding: 20px; gap: 16px; }
-            .site-nav.open { display: flex; }
-            .hamburger { display: block; }
-            .event-row { grid-template-columns: 1fr; gap: 4px; }
+        .events-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
+        .events-table th { text-align: left; background: #eaecf0; padding: 6px 10px; border: 1px solid #a2a9b1; font-family: sans-serif; font-size: 12px; font-weight: bold; }
+        .events-table td { padding: 6px 10px; border: 1px solid #a2a9b1; vertical-align: top; }
+        .events-table tr:nth-child(even) { background: #f8f9fa; }
+        .events-table .col-date { width: 100px; white-space: nowrap; color: #54595d; }
+        .events-table .col-type { width: 80px; }
+        .event-tag { font-size: 10px; font-weight: bold; text-transform: uppercase; padding: 1px 5px; border-radius: 2px; font-family: sans-serif; white-space: nowrap; }
+        .tag-research { background: #eaf3ff; color: #36c; }
+        .tag-policy { background: #fee7e6; color: #d33; }
+        .tag-culture { background: #fef6e7; color: #ac6600; }
+
+        .back-link { font-size: 13px; font-family: sans-serif; }
+
+        .footer { max-width: 960px; margin: 0 auto; padding: 12px 16px; font-size: 12px; color: #54595d; border-top: 1px solid #a2a9b1; text-align: center; font-family: sans-serif; }
+        .footer a { color: #0645ad; }
+        .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
+
+        @media (max-width: 720px) {
+            .site-nav { display: none; }
+            .content { padding: 12px 14px 24px; }
+            .events-table .col-date { width: auto; }
+            .events-table .col-type { width: auto; }
         }
     </style>
 </head>
 <body>
 
-<header class="site-header">
-    <div class="wrap">
-        <a href="/" class="logo">
-            <div class="logo-mark"></div>
-            WikiPsilocybin
-        </a>
-        <nav class="site-nav" id="nav">
-            <a href="/#recent-events">Recent Events</a>
+<div class="site-top">
+    <div class="site-top-inner">
+        <div class="site-title">
+            <a href="/">WikiPsilocybin</a>
+            <small>The free psilocybin encyclopedia</small>
+        </div>
+        <nav class="site-nav">
+            <a href="/#recent-events">Recent events</a>
             <a href="/#what-is">Overview</a>
             <a href="/#research">Research</a>
-            <a href="/#legal">Legal Status</a>
+            <a href="/#legal">Legal status</a>
+            <a href="/events/">All events</a>
         </nav>
-        <button class="hamburger" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-        </button>
     </div>
-</header>
-
-<div class="wrap">
-    <div class="page-header">
-        <h1>All Recent Events</h1>
-        <p>Every trend, study, and development tracked by our daily research scouts — organized by date.</p>
-    </div>
-
-    <div class="month-group">
-        <div class="month-label">August 2026</div>
-        <div class="events-list">
-            <a href="/events/2026-08-08-johns-hopkins-default-mode/" class="event-row">
-                <span class="event-row-date">Aug 8, 2026</span>
-                <div class="event-row-body">
-                    <span class="event-row-tag tag-research">Research</span>
-                    <span class="event-row-title">Johns Hopkins publishes landmark study on psilocybin's effect on default mode network connectivity</span>
-                </div>
-            </a>
-            <a href="/events/2026-08-08-colorado-dispensary-model/" class="event-row">
-                <span class="event-row-date">Aug 8, 2026</span>
-                <div class="event-row-body">
-                    <span class="event-row-tag tag-policy">Policy</span>
-                    <span class="event-row-title">Colorado approves first wave of psilocybin healing centers under regulated dispensary model</span>
-                </div>
-            </a>
-            <a href="/events/2026-08-07-microdosing-workplace/" class="event-row">
-                <span class="event-row-date">Aug 7, 2026</span>
-                <div class="event-row-body">
-                    <span class="event-row-tag tag-culture">Culture</span>
-                    <span class="event-row-title">New survey finds 18% of tech workers have microdosed psilocybin for focus and creativity</span>
-                </div>
-            </a>
-            <a href="/events/2026-08-07-veterans-ptsd-trial/" class="event-row">
-                <span class="event-row-date">Aug 7, 2026</span>
-                <div class="event-row-body">
-                    <span class="event-row-tag tag-research">Research</span>
-                    <span class="event-row-title">VA-funded trial shows psilocybin reduces PTSD symptom severity by 62% in combat veterans</span>
-                </div>
-            </a>
-            <a href="/events/2026-08-06-huberman-episode/" class="event-row">
-                <span class="event-row-date">Aug 6, 2026</span>
-                <div class="event-row-body">
-                    <span class="event-row-tag tag-culture">Culture</span>
-                    <span class="event-row-title">Huberman Lab dedicates full episode to psilocybin neuroplasticity mechanisms and dosing protocols</span>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <a href="/" class="back-link">← Back to WikiPsilocybin</a>
 </div>
 
-<footer class="site-footer">
-    <div class="wrap">
-        <div class="footer-brand">
-            <a href="/" class="logo">
-                <div class="logo-mark"></div>
-                WikiPsilocybin
-            </a>
-            <p>A daily-updated encyclopedia of psilocybin research, news, and developments.</p>
-        </div>
-        <div class="footer-links">
-            <a href="/events/">All Events</a>
-            <a href="/#what-is">Overview</a>
-            <a href="/#research">Research</a>
-            <a href="/#legal">Legal Status</a>
-        </div>
-        <div class="copyright">&copy; 2026 WikiPsilocybin. For educational purposes only.</div>
+<div class="page-wrap">
+    <div class="page-tabs">
+        <a href="/">Article</a>
+        <a href="/events/" class="active">Recent events</a>
     </div>
-</footer>
+
+    <div class="content">
+        <h1 class="page-title">Recent events</h1>
+        <p class="page-subtitle">All psilocybin-related events tracked by our daily research scouts, organized by date.</p>
+
+        <h2 class="month-heading">August 2026</h2>
+        <table class="events-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Event</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="col-date">Aug 8, 2026</td>
+                    <td class="col-type"><span class="event-tag tag-research">Research</span></td>
+                    <td><a href="/events/2026-08-08-johns-hopkins-default-mode/">Johns Hopkins publishes landmark study on psilocybin's effect on default mode network connectivity</a></td>
+                </tr>
+                <tr>
+                    <td class="col-date">Aug 8, 2026</td>
+                    <td class="col-type"><span class="event-tag tag-policy">Policy</span></td>
+                    <td><a href="/events/2026-08-08-colorado-dispensary-model/">Colorado approves first wave of psilocybin healing centers under regulated dispensary model</a></td>
+                </tr>
+                <tr>
+                    <td class="col-date">Aug 7, 2026</td>
+                    <td class="col-type"><span class="event-tag tag-culture">Culture</span></td>
+                    <td><a href="/events/2026-08-07-microdosing-workplace/">New survey finds 18% of tech workers have microdosed psilocybin for focus and creativity</a></td>
+                </tr>
+                <tr>
+                    <td class="col-date">Aug 7, 2026</td>
+                    <td class="col-type"><span class="event-tag tag-research">Research</span></td>
+                    <td><a href="/events/2026-08-07-veterans-ptsd-trial/">VA-funded trial shows psilocybin reduces PTSD symptom severity by 62% in combat veterans</a></td>
+                </tr>
+                <tr>
+                    <td class="col-date">Aug 6, 2026</td>
+                    <td class="col-type"><span class="event-tag tag-culture">Culture</span></td>
+                    <td><a href="/events/2026-08-06-huberman-episode/">Huberman Lab dedicates full episode to psilocybin neuroplasticity mechanisms and dosing protocols</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="back-link"><a href="/">&larr; Back to WikiPsilocybin</a></p>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-links">
+        <a href="/events/">All events</a>
+        <a href="/#what-is">Overview</a>
+        <a href="/#research">Research</a>
+        <a href="/#legal">Legal status</a>
+    </div>
+    <p>&copy; 2026 WikiPsilocybin. For educational purposes only.</p>
+</div>
 
 </body>
 </html>
