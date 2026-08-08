@@ -186,5 +186,107 @@
     <p>&copy; 2026 WikiPsilocybin. For educational purposes only.</p>
 </div>
 
+<style>
+    .wp-preview { position: absolute; z-index: 9999; width: 320px; background: #fff; border: 1px solid #a2a9b1; box-shadow: 0 2px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 13px; color: #202122; opacity: 0; pointer-events: none; transition: opacity 0.15s; }
+    .wp-preview.visible { opacity: 1; pointer-events: auto; }
+    .wp-preview-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #eaecf0; }
+    .wp-preview-body { padding: 10px 12px; }
+    .wp-preview-title { font-weight: bold; font-size: 14px; margin-bottom: 4px; color: #202122; font-family: 'Linux Libertine', Georgia, serif; }
+    .wp-preview-text { font-size: 12px; line-height: 1.5; color: #54595d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+</style>
+
+<div class="wp-preview" id="wp-preview">
+    <img class="wp-preview-img" id="wp-preview-img" src="" alt="">
+    <div class="wp-preview-body">
+        <div class="wp-preview-title" id="wp-preview-title"></div>
+        <div class="wp-preview-text" id="wp-preview-text"></div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var previews = {
+        '/events/': {
+            img: '',
+            title: 'Recent Events',
+            text: 'Browse all recent psilocybin events — research breakthroughs, policy changes, and cultural developments tracked daily by AI-powered research scouts.'
+        },
+        '/': {
+            img: 'https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png',
+            title: 'Psilocybin — WikiPsilocybin',
+            text: 'The living encyclopedia of psilocybin research, clinical trials, legalization news, and psychedelic culture. Updated daily.'
+        }
+    };
+
+    var card = document.getElementById('wp-preview');
+    var cardImg = document.getElementById('wp-preview-img');
+    var cardTitle = document.getElementById('wp-preview-title');
+    var cardText = document.getElementById('wp-preview-text');
+    var showTimer = null;
+    var hideTimer = null;
+
+    function getPath(href) {
+        try {
+            var url = new URL(href, location.origin);
+            if (url.origin !== location.origin) return null;
+            return url.pathname;
+        } catch(e) { return null; }
+    }
+
+    function showCard(link, data) {
+        if (data.img) {
+            cardImg.src = data.img;
+            cardImg.style.display = 'block';
+        } else {
+            cardImg.style.display = 'none';
+        }
+        cardTitle.textContent = data.title;
+        cardText.textContent = data.text;
+
+        var rect = link.getBoundingClientRect();
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        var scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        var top = rect.bottom + scrollY + 6;
+        var left = rect.left + scrollX;
+
+        if (left + 320 > document.documentElement.clientWidth) {
+            left = document.documentElement.clientWidth - 330;
+        }
+        if (left < 4) left = 4;
+
+        card.style.top = top + 'px';
+        card.style.left = left + 'px';
+        card.classList.add('visible');
+    }
+
+    function hideCard() {
+        card.classList.remove('visible');
+    }
+
+    document.addEventListener('mouseover', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var path = getPath(link.href);
+        if (!path || !previews[path]) return;
+
+        clearTimeout(hideTimer);
+        clearTimeout(showTimer);
+        showTimer = setTimeout(function() {
+            showCard(link, previews[path]);
+        }, 300);
+    });
+
+    document.addEventListener('mouseout', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        clearTimeout(showTimer);
+        hideTimer = setTimeout(hideCard, 200);
+    });
+
+    card.addEventListener('mouseover', function() { clearTimeout(hideTimer); });
+    card.addEventListener('mouseout', function() { hideTimer = setTimeout(hideCard, 200); });
+})();
+</script>
+
 </body>
 </html>
