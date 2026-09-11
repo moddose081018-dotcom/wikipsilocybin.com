@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recent events — WikiPsilocybin</title>
-    <meta name="description" content="Browse all recent events in psilocybin research, policy, and culture. Updated daily by AI-powered trend scouts.">
-    <link rel="canonical" href="https://wikipsilocybin.com/events/">
+    <title>Ohio State pilot trial: 9 of 12 veterans with severe, treatment-resistant PTSD in remission one month after psilocybin-assisted therapy — WikiPsilocybin</title>
+    <meta name="description" content="An open-label pilot published in Communications Medicine found psilocybin-assisted therapy was safe and put 75% of 12 veterans with treatment-resistant PTSD into remission at one month, with no serious adverse events.">
+    <link rel="canonical" href="https://wikipsilocybin.com/events/2026-07-30-osu-veterans-ptsd-pilot/">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Linux Libertine', Georgia, 'Times New Roman', serif; font-size: 14px; line-height: 1.6; color: #202122; background: #f8f9fa; }
@@ -29,41 +29,60 @@
 
         .content { padding: 16px 24px 32px; }
 
+        .breadcrumb { font-size: 12px; color: #54595d; font-family: sans-serif; margin-bottom: 12px; }
+        .breadcrumb a { font-size: 12px; }
+
         .page-title { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; font-weight: normal; line-height: 1.2; margin-bottom: 4px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
-        .page-subtitle { font-size: 13px; color: #54595d; font-family: sans-serif; margin-bottom: 20px; font-style: italic; }
-
-        h2 { font-family: 'Linux Libertine', Georgia, serif; font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 24px 0 10px; padding-bottom: 2px; }
-        p { margin-bottom: 10px; }
-
-        .month-heading { font-family: 'Linux Libertine', Georgia, serif; font-size: 19px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 20px 0 10px; padding-bottom: 2px; }
-
-        .events-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 13px; }
-        .events-table th { text-align: left; background: #eaecf0; padding: 6px 10px; border: 1px solid #a2a9b1; font-family: sans-serif; font-size: 12px; font-weight: bold; }
-        .events-table td { padding: 6px 10px; border: 1px solid #a2a9b1; vertical-align: top; }
-        .events-table tr:nth-child(even) { background: #f8f9fa; }
-        .events-table .col-date { width: 100px; white-space: nowrap; color: #54595d; }
-        .events-table .col-type { width: 80px; }
-        .event-tag { font-size: 10px; font-weight: bold; text-transform: uppercase; padding: 1px 5px; border-radius: 2px; font-family: sans-serif; white-space: nowrap; }
+        .page-meta { font-size: 12px; color: #54595d; font-family: sans-serif; margin-bottom: 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+        .event-tag { font-size: 10px; font-weight: bold; text-transform: uppercase; padding: 1px 5px; border-radius: 2px; font-family: sans-serif; }
         .tag-research { background: #eaf3ff; color: #36c; }
-        .tag-policy { background: #fee7e6; color: #d33; }
-        .tag-culture { background: #fef6e7; color: #ac6600; }
+        .signal-badge { font-size: 10px; font-weight: bold; text-transform: uppercase; color: #14866d; font-family: sans-serif; }
 
-        .back-link { font-size: 13px; font-family: sans-serif; }
+        .infobox { float: right; clear: right; width: 260px; margin: 0 0 16px 20px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; }
+        .infobox-title { background: #ddd; padding: 6px 10px; font-weight: bold; text-align: center; font-family: sans-serif; font-size: 13px; }
+        .infobox-image { text-align: center; padding: 8px; background: #f8f9fa; }
+        .infobox-image img { max-width: 240px; }
+        .infobox-image .caption { font-size: 11px; color: #54595d; margin-top: 4px; font-style: italic; }
+        .infobox-row { display: flex; border-top: 1px solid #a2a9b1; }
+        .infobox-label { width: 90px; padding: 4px 8px; background: #eaecf0; font-weight: bold; font-size: 12px; flex-shrink: 0; }
+        .infobox-value { padding: 4px 8px; flex: 1; font-size: 12px; }
+
+        h2 { font-family: 'Linux Libertine', Georgia, serif; font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin: 24px 0 8px; padding-bottom: 2px; clear: both; }
+        h3 { font-family: 'Linux Libertine', Georgia, serif; font-size: 17px; font-weight: bold; margin: 16px 0 6px; }
+        p { margin-bottom: 10px; line-height: 1.6; }
+        ul { margin: 0 0 10px 24px; }
+        li { margin-bottom: 4px; line-height: 1.5; }
+        blockquote { border-left: 3px solid #a2a9b1; padding: 4px 12px; margin: 12px 0; color: #54595d; font-style: italic; }
+        blockquote p { margin-bottom: 0; }
+
+        .ambox { border: 1px solid #a2a9b1; background: #fbfbfb; padding: 8px 12px; margin: 12px 0; font-size: 13px; border-left: 4px solid #36c; }
+
+        .source-box { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 20px 0; font-size: 13px; }
+        .source-box strong { font-family: sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #54595d; display: block; margin-bottom: 4px; }
+
+        .back-link { font-size: 13px; font-family: sans-serif; margin-top: 20px; }
 
         .footer { max-width: 960px; margin: 0 auto; padding: 12px 16px; font-size: 12px; color: #54595d; border-top: 1px solid #a2a9b1; text-align: center; font-family: sans-serif; }
         .footer a { color: #0645ad; }
         .footer-links { display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; flex-wrap: wrap; }
 
         @media (max-width: 720px) {
+            .infobox { float: none; width: 100%; margin: 0 0 16px 0; }
             .site-nav { display: none; }
             .content { padding: 12px 14px 24px; }
-            .events-table .col-date { width: auto; }
-            .events-table .col-type { width: auto; }
         }
     </style>
+<style>
+    .wp-preview { position: absolute; z-index: 9999; width: 320px; background: #fff; border: 1px solid #a2a9b1; box-shadow: 0 2px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 13px; color: #202122; opacity: 0; pointer-events: none; transition: opacity 0.15s; }
+    .wp-preview.visible { opacity: 1; pointer-events: auto; }
+    .wp-preview-img { width: 100%; height: 160px; object-fit: cover; display: block; border-bottom: 1px solid #eaecf0; }
+    .wp-preview-body { padding: 10px 12px; }
+    .wp-preview-title { font-weight: bold; font-size: 14px; margin-bottom: 4px; color: #202122; font-family: 'Linux Libertine', Georgia, serif; }
+    .wp-preview-text { font-size: 12px; line-height: 1.5; color: #54595d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+</style>
+
 </head>
 <body>
-
 <div class="site-top">
     <div class="site-top-inner">
         <div class="site-title">
@@ -89,131 +108,56 @@
     </div>
 
     <div class="content">
-        <h1 class="page-title">Recent events</h1>
-        <p class="page-subtitle">Research, policy and culture developments in psilocybin, organized by date. Every entry links to its primary source.</p>
-
-        <h2 class="month-heading">August 2026</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">Aug 6, 2026</td>
-                    <td class="col-type"><span class="event-tag tag-policy">Policy</span></td>
-                    <td><a href="/events/2026-08-06-va-pivot-trial/">VA launches PIVOT, a five-site randomized trial of psilocybin for veterans with treatment-resistant depression</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="month-heading">July 2026</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">Jul 30, 2026</td>
-                    <td class="col-type"><span class="event-tag tag-research">Research</span></td>
-                    <td><a href="/events/2026-07-30-osu-veterans-ptsd-pilot/">Ohio State pilot trial: 9 of 12 veterans with severe, treatment-resistant PTSD in remission one month after psilocybin-assisted therapy</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="month-heading">January 2026</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">Jan 26, 2026</td>
-                    <td class="col-type"><span class="event-tag tag-culture">Culture</span></td>
-                    <td><a href="/events/2026-01-26-rand-psychedelic-use-survey/">RAND survey: about 11 million US adults used psilocybin in 2025, and most past-year users microdosed</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="month-heading">March 2025</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">Mar 31, 2025</td>
-                    <td class="col-type"><span class="event-tag tag-policy">Policy</span></td>
-                    <td><a href="/events/2025-03-31-colorado-first-healing-center/">Colorado issues its first licensed psilocybin healing center license to The Center Origin in Denver</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="month-heading">July 2024</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">Jul 17, 2024</td>
-                    <td class="col-type"><span class="event-tag tag-research">Research</span></td>
-                    <td><a href="/events/2024-07-17-washu-psilocybin-desynchronizes-brain/">Washington University study in Nature shows psilocybin desynchronizes the brain's default mode network, with some changes lasting weeks</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2 class="month-heading">May 2023</h2>
-        <table class="events-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Event</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-date">May 8, 2023</td>
-                    <td class="col-type"><span class="event-tag tag-culture">Culture</span></td>
-                    <td><a href="/events/2023-05-08-huberman-lab-psilocybin-episode/">Huberman Lab releases a full episode on psilocybin's mechanisms, therapeutic evidence, and risks</a></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p class="back-link"><a href="/">&larr; Back to WikiPsilocybin</a></p>
+        <div class="breadcrumb">
+            <a href="/">WikiPsilocybin</a> &gt; <a href="/events/">Recent events</a> &gt; Jul 30, 2026
+        </div>
+        <h1 class="page-title">Ohio State pilot trial: 9 of 12 veterans with severe, treatment-resistant PTSD in remission one month after psilocybin-assisted therapy</h1>
+        <div class="page-meta">
+            <span>Jul 30, 2026</span>
+            <span class="event-tag tag-research">Research</span>
+        </div>
+        <div class="infobox">
+            <div class="infobox-title">At a glance</div>
+            <div class="infobox-row"><div class="infobox-label">Institution</div><div class="infobox-value">The Ohio State University, Center for Psychedelic Drug Research and Education</div></div>
+            <div class="infobox-row"><div class="infobox-label">Lead author</div><div class="infobox-value">Stacey Armstrong</div></div>
+            <div class="infobox-row"><div class="infobox-label">Participants</div><div class="infobox-value">12 veterans with severe, treatment-resistant PTSD</div></div>
+            <div class="infobox-row"><div class="infobox-label">Design</div><div class="infobox-value">Open-label pilot, 11 weeks</div></div>
+            <div class="infobox-row"><div class="infobox-label">Dosing</div><div class="infobox-value">Two sessions, 15 mg then 25 mg synthetic psilocybin, 2 to 3 weeks apart</div></div>
+            <div class="infobox-row"><div class="infobox-label">Published in</div><div class="infobox-value">Communications Medicine, 30 July 2026</div></div>
+            <div class="infobox-row"><div class="infobox-label">Registration</div><div class="infobox-value">NCT05554094</div></div>
+        </div>
+        <p><strong>Researchers at The Ohio State University</strong> have published the first US clinical trial of psilocybin-assisted therapy in veterans whose PTSD had not responded to conventional treatment. The open-label pilot, led by Stacey Armstrong of Ohio State's Center for Psychedelic Drug Research and Education, appeared in <em>Communications Medicine</em> on 30 July 2026.</p>
+        <h2>Key findings</h2>
+        <ul>
+        <li><strong>Safety:</strong> no serious adverse events and no increase in suicidal thinking or behaviour across the 11-week protocol.</li>
+        <li><strong>Symptom reduction:</strong> clinician-rated PTSD symptoms on the CAPS-5 scale fell by an average of 27.5 points from baseline to one month after treatment, from close to 40 to just over 12.</li>
+        <li><strong>Remission:</strong> nine of the twelve veterans (75%) no longer met criteria for PTSD one month after the study ended.</li>
+        </ul>
+        <h2>How the trial was run</h2>
+        <p>Participants received about eight hours of preparatory psychotherapy, then two supervised psilocybin sessions of 15 mg and 25 mg spaced two to three weeks apart, followed by roughly eight further hours of integration therapy. Recruitment ran from January 2023 to April 2025.</p>
+        <h2>Limitations</h2>
+        <p>This was a small, open-label study with no control group, so expectancy effects cannot be separated from drug effects, and results in twelve people can shift substantially in larger samples. The authors describe the outcomes as preliminary. A randomised, controlled follow-up is the necessary next step; the VA's newly announced <a href="/events/2026-08-06-va-pivot-trial/">PIVOT trial</a> will provide controlled data in a related population.</p>
+        <div class="source-box">
+            <strong>Sources</strong>
+            <ul style="margin:0 0 0 18px">
+            <li><a href="https://www.nature.com/articles/s43856-026-01767-4" rel="nofollow noopener">Armstrong S, et al. Safety, feasibility, and preliminary clinical outcomes of psilocybin-assisted therapy for veterans with severe, treatment-resistant PTSD: an open-label pilot clinical trial. Communications Medicine, 2026</a></li>
+            <li><a href="https://news.osu.edu/for-veterans-with-severe-ptsd-psilocybin-assisted-therapy-may-help/" rel="nofollow noopener">Ohio State News, Jul 2026: For veterans with severe PTSD, psilocybin-assisted therapy may help</a></li>
+            <li><a href="https://clinicaltrials.gov/study/NCT05554094" rel="nofollow noopener">ClinicalTrials.gov NCT05554094</a></li>
+            </ul>
+        </div>
+        <p class="back-link"><a href="/events/">&larr; Back to recent events</a> &middot; <a href="/">Main article</a></p>
     </div>
 </div>
 
 <div class="footer">
     <div class="footer-links">
+        <a href="/">Psilocybin</a>
+        <a href="/are-magic-mushrooms-dangerous/">Are magic mushrooms dangerous?</a>
+        <a href="/are-shrooms-addictive/">Are shrooms addictive?</a>
         <a href="/events/">All events</a>
-        <a href="/#what-is">Overview</a>
-        <a href="/#research">Research</a>
-        <a href="/#legal">Legal status</a>
     </div>
-    <p>&copy; 2026 WikiPsilocybin. For educational purposes only.</p>
+    <p>&copy; 2026 WikiPsilocybin. For educational and harm-reduction purposes only. This site does not sell or promote the use of controlled substances and is not a substitute for medical advice.</p>
 </div>
-
 <style>
     .wp-preview { position: absolute; z-index: 9999; width: 320px; background: #fff; border: 1px solid #a2a9b1; box-shadow: 0 2px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 13px; color: #202122; opacity: 0; pointer-events: none; transition: opacity 0.15s; }
     .wp-preview.visible { opacity: 1; pointer-events: auto; }
