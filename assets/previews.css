@@ -1,0 +1,51 @@
+.wp-preview {
+    position: absolute;
+    z-index: 9999;
+    width: 320px;
+    max-width: calc(100vw - 16px);
+    background: #fff;
+    border: 1px solid #a2a9b1;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #202122;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+}
+.wp-preview.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.wp-preview-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: none;
+    border-bottom: 1px solid #eaecf0;
+}
+.wp-preview-body { padding: 10px 12px; }
+.wp-preview-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #202122;
+    font-family: 'Linux Libertine', Georgia, serif;
+}
+.wp-preview-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #54595d;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.wp-preview-hint {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #72777d;
+}
+@media (hover: none), (pointer: coarse) {
+    .wp-preview { display: none !important; }
+}
