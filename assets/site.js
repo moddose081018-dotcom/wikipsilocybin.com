@@ -150,9 +150,13 @@
         host.appendChild(nav);
     }
 
-    function canHover() {
-        return window.matchMedia &&
-            window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var lastTouchAt = 0;
+    document.addEventListener('touchstart', function () {
+        lastTouchAt = Date.now();
+    }, true);
+
+    function isEmulatedTouchMouse() {
+        return Date.now() - lastTouchAt < 600;
     }
 
     function lookupPreview(map, pathname) {
@@ -213,7 +217,6 @@
         var showTimer = null;
         var hideTimer = null;
         var activeLink = null;
-        var hoverOk = canHover();
 
         function hideCard() {
             card.classList.remove('visible');
@@ -256,24 +259,23 @@
             hideTimer = setTimeout(hideCard, 180);
         }
 
-        if (hoverOk) {
-            document.addEventListener('mouseover', function (e) {
-                var link = e.target.closest && e.target.closest('a[href]');
-                if (link) scheduleShow(link);
-            });
-            document.addEventListener('mouseout', function (e) {
-                var link = e.target.closest && e.target.closest('a[href]');
-                if (!link) return;
-                var to = e.relatedTarget;
-                if (to && (card.contains(to) || link.contains(to))) return;
-                scheduleHide();
-            });
-            card.addEventListener('mouseover', function () { clearTimeout(hideTimer); });
-            card.addEventListener('mouseout', function (e) {
-                if (e.relatedTarget && card.contains(e.relatedTarget)) return;
-                scheduleHide();
-            });
-        }
+        document.addEventListener('mouseover', function (e) {
+            if (isEmulatedTouchMouse()) return;
+            var link = e.target.closest && e.target.closest('a[href]');
+            if (link) scheduleShow(link);
+        });
+        document.addEventListener('mouseout', function (e) {
+            var link = e.target.closest && e.target.closest('a[href]');
+            if (!link) return;
+            var to = e.relatedTarget;
+            if (to && (card.contains(to) || link.contains(to))) return;
+            scheduleHide();
+        });
+        card.addEventListener('mouseover', function () { clearTimeout(hideTimer); });
+        card.addEventListener('mouseout', function (e) {
+            if (e.relatedTarget && card.contains(e.relatedTarget)) return;
+            scheduleHide();
+        });
 
         document.addEventListener('focusin', function (e) {
             var link = e.target.closest && e.target.closest('a[href]');

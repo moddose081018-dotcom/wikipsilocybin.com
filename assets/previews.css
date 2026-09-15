@@ -46,6 +46,3 @@
     font-size: 11px;
     color: #72777d;
 }
-@media (hover: none), (pointer: coarse) {
-    .wp-preview { display: none !important; }
-}
