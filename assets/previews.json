@@ -1,0 +1,151 @@
+{
+  "/about/": {
+    "title": "About WikiPsilocybin",
+    "extract": "Who runs WikiPsilocybin, how its articles are written and checked, its harm-reduction stance, and how to contact the editor."
+  },
+  "/are-magic-mushrooms-dangerous/": {
+    "title": "Are magic mushrooms dangerous?",
+    "extract": "Are magic mushrooms dangerous? An evidence-based look at psilocybin risks: side effects, bad trips, overdose and poisoning symptoms, drug interactions, mental health contraindications, and harm reduction. Fully referenced."
+  },
+  "/are-shrooms-addictive/": {
+    "title": "Are shrooms addictive?",
+    "extract": "Are shrooms addictive? What research says about psilocybin dependence, tolerance, withdrawal, and hallucinogen use disorder, and why experts rate its abuse potential as low. Fully referenced."
+  },
+  "/de/about/": {
+    "title": "Über WikiPsilocybin",
+    "extract": "Wer WikiPsilocybin herausgibt. Diese Seite ist noch nicht übersetzt; die englische Fassung ist die verbindliche Quelle."
+  },
+  "/de/are-magic-mushrooms-dangerous/": {
+    "title": "Sind Zauberpilze gefährlich?",
+    "extract": "Sind Zauberpilze gefährlich? Eine evidenzbasierte Übersicht der Risiken von Psilocybin: Nebenwirkungen, Bad Trips, Überdosis und Vergiftungssymptome, Wechselwirkungen, Kontraindikationen für die psychische Gesundheit und Schadensminderung. Vollständig mit Quellen belegt."
+  },
+  "/de/are-shrooms-addictive/": {
+    "title": "Machen Pilze abhängig?",
+    "extract": "Machen Pilze abhängig? Was die Forschung zu Psilocybin-Abhängigkeit, Toleranz, Entzug und Halluzinogenkonsumstörung sagt, und warum Fachleute das Missbrauchspotenzial als gering einstufen. Vollständig mit Quellen belegt."
+  },
+  "/de/editorial-policy/": {
+    "title": "Redaktionsrichtlinie",
+    "extract": "Redaktionsstandards von WikiPsilocybin. Diese Seite ist noch nicht übersetzt; die englische Fassung ist die verbindliche Quelle."
+  },
+  "/de/events/": {
+    "title": "Aktuelle Ereignisse",
+    "extract": "Forschung, Politik und Kultur rund um Psilocybin. Die Ereignisliste bleibt auf Englisch."
+  },
+  "/de/": {
+    "title": "Psilocybin",
+    "extract": "WikiPsilocybin ist eine unabhängige Enzyklopädie zu Psilocybin-Forschung, klinischen Studien, rechtlichen Entwicklungen und Schadensminderung. Jede Aussage ist mit einer Primärquelle belegt.",
+    "image": "https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png"
+  },
+  "/editorial-policy/": {
+    "title": "Editorial policy",
+    "extract": "WikiPsilocybin's standards for sourcing, evidence, use of AI, expert review, contributed articles, corrections, and independence."
+  },
+  "/es/about/": {
+    "title": "Acerca de WikiPsilocybin",
+    "extract": "Quién edita WikiPsilocybin. Esta página aún no está traducida; la versión en inglés es la fuente de referencia."
+  },
+  "/es/are-magic-mushrooms-dangerous/": {
+    "title": "¿Son peligrosos los hongos mágicos?",
+    "extract": "¿Son peligrosos los hongos mágicos? Una revisión basada en evidencia de los riesgos de la psilocibina: efectos secundarios, malos viajes, sobredosis y síntomas de envenenamiento, interacciones farmacológicas, contraindicaciones de salud mental y reducción de daños. Completamente referenciada."
+  },
+  "/es/are-shrooms-addictive/": {
+    "title": "¿Crean adicción los hongos?",
+    "extract": "¿Crean adicción los hongos? Lo que dice la investigación sobre la dependencia de la psilocibina, la tolerancia, la abstinencia y el trastorno por uso de alucinógenos, y por qué los expertos califican su potencial de abuso como bajo. Completamente referenciada."
+  },
+  "/es/editorial-policy/": {
+    "title": "Política editorial",
+    "extract": "Normas de redacción de WikiPsilocybin. Esta página aún no está traducida; la versión en inglés es la fuente de referencia."
+  },
+  "/es/events/": {
+    "title": "Acontecimientos recientes",
+    "extract": "Investigación, política y cultura en torno a la psilocibina. El listado de acontecimientos sigue en inglés."
+  },
+  "/es/": {
+    "title": "Psilocibina",
+    "extract": "WikiPsilocybin es una enciclopedia independiente de investigación sobre psilocibina, ensayos clínicos, noticias legales y reducción de daños. Cada afirmación está citada a una fuente primaria.",
+    "image": "https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png"
+  },
+  "/events/2023-05-08-huberman-lab-psilocybin-episode/": {
+    "title": "Huberman Lab releases a full episode on psilocybin's mechanisms, therapeutic evidence, and risks",
+    "extract": "Andrew Huberman's podcast devoted an episode to how psilocybin acts on serotonin receptors and neuroplasticity, clinical trial evidence in depression and addiction, dosing categories, and who should avoid it."
+  },
+  "/events/2024-07-17-washu-psilocybin-desynchronizes-brain/": {
+    "title": "Washington University study in Nature shows psilocybin desynchronizes the brain's default mode network, with some changes lasting weeks",
+    "extract": "Using precision functional MRI with about 18 scans per person, WashU researchers showed a 25 mg psilocybin dose massively disrupts default mode network synchrony, with a reduction in hippocampal-DMN connectivity persisting for weeks."
+  },
+  "/events/2025-03-31-colorado-first-healing-center/": {
+    "title": "Colorado issues its first licensed psilocybin healing center license to The Center Origin in Denver",
+    "extract": "Colorado's Natural Medicine Division issued the state's first healing center license under Proposition 122 to The Center Origin, a wellness center in downtown Denver, opening the door to regulated psilocybin sessions for adults."
+  },
+  "/events/2026-01-26-rand-psychedelic-use-survey/": {
+    "title": "RAND survey: about 11 million US adults used psilocybin in 2025, and most past-year users microdosed",
+    "extract": "RAND's nationally representative survey of 10,122 adults estimates 11 million Americans used psilocybin in 2025, 69% of past-year users microdosed, and roughly 10 million adults microdosed psilocybin, LSD, or MDMA."
+  },
+  "/events/2026-07-30-osu-veterans-ptsd-pilot/": {
+    "title": "Ohio State pilot trial: 9 of 12 veterans with severe, treatment-resistant PTSD in remission one month after psilocybin-assisted therapy",
+    "extract": "An open-label pilot published in Communications Medicine found psilocybin-assisted therapy was safe and put 75% of 12 veterans with treatment-resistant PTSD into remission at one month, with no serious adverse events."
+  },
+  "/events/2026-08-06-va-pivot-trial/": {
+    "title": "VA launches PIVOT, a five-site randomized trial of psilocybin for veterans with treatment-resistant depression",
+    "extract": "The Department of Veterans Affairs announced a randomized controlled trial of at least 240 veterans with treatment-resistant depression, some with PTSD, comparing two psilocybin doses at five VA medical centers through 2031."
+  },
+  "/events/": {
+    "title": "Recent events",
+    "extract": "Research, policy and culture developments in psilocybin, each linked to its primary source."
+  },
+  "/fr/about/": {
+    "title": "À propos de WikiPsilocybin",
+    "extract": "Qui édite WikiPsilocybin. Cette page n'est pas encore traduite ; la version anglaise est la source de référence."
+  },
+  "/fr/are-magic-mushrooms-dangerous/": {
+    "title": "Les champignons magiques sont-ils dangereux ?",
+    "extract": "Les champignons magiques sont-ils dangereux ? Une revue fondée sur les preuves des risques de la psilocybine : effets secondaires, mauvais trips, surdose et symptômes d'empoisonnement, interactions médicamenteuses, contre-indications de santé mentale et réduction des risques. Entièrement référencée."
+  },
+  "/fr/are-shrooms-addictive/": {
+    "title": "Les champignons créent-ils une addiction ?",
+    "extract": "Les champignons créent-ils une addiction ? Ce que dit la recherche sur la dépendance à la psilocybine, la tolérance, le sevrage et le trouble de l'usage d'hallucinogènes, et pourquoi les experts jugent son potentiel d'abus faible. Entièrement référencée."
+  },
+  "/fr/editorial-policy/": {
+    "title": "Politique éditoriale",
+    "extract": "Normes éditoriales de WikiPsilocybin. Cette page n'est pas encore traduite ; la version anglaise est la source de référence."
+  },
+  "/fr/events/": {
+    "title": "Événements récents",
+    "extract": "Recherche, politique et culture autour de la psilocybine. La liste des événements reste en anglais."
+  },
+  "/fr/": {
+    "title": "Psilocybine",
+    "extract": "WikiPsilocybin est une encyclopédie indépendante de recherche sur la psilocybine, les essais cliniques, l'actualité juridique et la réduction des risques. Chaque affirmation est citée à une source primaire.",
+    "image": "https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png"
+  },
+  "/": {
+    "title": "Psilocybin",
+    "extract": "WikiPsilocybin is an independent encyclopedia of psilocybin research, clinical trials, legalization news, and harm reduction. Every claim cited to a primary source.",
+    "image": "https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png"
+  },
+  "/pt/about/": {
+    "title": "Sobre o WikiPsilocybin",
+    "extract": "Quem edita o WikiPsilocybin. Esta página ainda não está traduzida; a versão em inglês é a fonte de referência."
+  },
+  "/pt/are-magic-mushrooms-dangerous/": {
+    "title": "Os cogumelos mágicos são perigosos?",
+    "extract": "Os cogumelos mágicos são perigosos? Uma revisão baseada em evidência dos riscos da psilocibina: efeitos secundários, más viagens, sobredosagem e sintomas de envenenamento, interações medicamentosas, contraindicações de saúde mental e redução de danos. Completamente referenciada."
+  },
+  "/pt/are-shrooms-addictive/": {
+    "title": "Os cogumelos viciam?",
+    "extract": "Os cogumelos viciam? O que diz a pesquisa sobre a dependência da psilocibina, a tolerância, a abstinência e o transtorno por uso de alucinogénios, e porque os especialistas classificam o seu potencial de abuso como baixo. Completamente referenciada."
+  },
+  "/pt/editorial-policy/": {
+    "title": "Política editorial",
+    "extract": "Normas editoriais do WikiPsilocybin. Esta página ainda não está traduzida; a versão em inglês é a fonte de referência."
+  },
+  "/pt/events/": {
+    "title": "Acontecimentos recentes",
+    "extract": "Pesquisa, política e cultura em torno da psilocibina. A lista de acontecimentos permanece em inglês."
+  },
+  "/pt/": {
+    "title": "Psilocibina",
+    "extract": "WikiPsilocybin é uma enciclopédia independente de pesquisa sobre psilocibina, ensaios clínicos, notícias legais e redução de danos. Cada afirmação está citada a uma fonte primária.",
+    "image": "https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png"
+  }
+}
