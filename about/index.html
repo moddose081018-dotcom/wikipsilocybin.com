@@ -87,10 +87,16 @@
         .wikitable { border-collapse: collapse; margin: 8px 0 14px; font-size: 13px; width: 100%; }
         .wikitable th, .wikitable td { border: 1px solid #a2a9b1; padding: 5px 8px; vertical-align: top; text-align: left; }
         .wikitable th { background: #eaecf0; font-family: sans-serif; font-size: 12px; }
+
+        .skip-link { position: absolute; top: 8px; left: 8px; z-index: 10000; padding: 10px 14px; background: #fff; color: #0645ad; border: 2px solid #36c; transform: translateY(-200%); }
+        .skip-link:focus { transform: translateY(0); }
+        a:focus-visible { outline: 2px solid #36c; outline-offset: 3px; }
     </style>
 
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "About WikiPsilocybin", "url": "https://wikipsilocybin.com/about/"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="site-top">
     <div class="site-top-inner">
         <div class="site-title">
@@ -112,7 +118,7 @@
         <a href="/about/" class="active">Project page</a>
         <a href="/events/">Recent events</a>
     </div>
-    <div class="content">
+    <div class="content" role="main" id="main-content" tabindex="-1">
         <h1 class="page-title">About WikiPsilocybin</h1>
         <p class="page-subtitle">Who runs this site, how it is written, and what it is for</p>
         <div class="infobox">

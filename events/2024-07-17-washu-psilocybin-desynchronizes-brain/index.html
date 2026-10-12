@@ -71,6 +71,10 @@
             .site-nav { display: none; }
             .content { padding: 12px 14px 24px; }
         }
+
+        .skip-link { position: absolute; top: 8px; left: 8px; z-index: 10000; padding: 10px 14px; background: #fff; color: #0645ad; border: 2px solid #36c; transform: translateY(-200%); }
+        .skip-link:focus { transform: translateY(0); }
+        a:focus-visible { outline: 2px solid #36c; outline-offset: 3px; }
     </style>
 <style>
     .wp-preview { position: absolute; z-index: 9999; width: 320px; background: #fff; border: 1px solid #a2a9b1; box-shadow: 0 2px 12px rgba(0,0,0,0.15); font-family: sans-serif; font-size: 13px; color: #202122; opacity: 0; pointer-events: none; transition: opacity 0.15s; }
@@ -81,8 +85,10 @@
     .wp-preview-text { font-size: 12px; line-height: 1.5; color: #54595d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
 
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Washington University study in Nature shows psilocybin desynchronizes the brain's default mode network, with some changes lasting weeks — WikiPsilocybin", "url": "https://wikipsilocybin.com/events/2024-07-17-washu-psilocybin-desynchronizes-brain/"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <div class="site-top">
     <div class="site-top-inner">
         <div class="site-title">
@@ -107,7 +113,7 @@
         <a href="/events/" class="active">Recent events</a>
     </div>
 
-    <div class="content">
+    <div class="content" role="main" id="main-content" tabindex="-1">
         <div class="breadcrumb">
             <a href="/">WikiPsilocybin</a> &gt; <a href="/events/">Recent events</a> &gt; Jul 17, 2024
         </div>

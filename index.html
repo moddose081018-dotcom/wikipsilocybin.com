@@ -82,9 +82,15 @@
             .site-nav { display: none; }
             .content { padding: 12px 14px 24px; }
         }
+
+        .skip-link { position: absolute; top: 8px; left: 8px; z-index: 10000; padding: 10px 14px; background: #fff; color: #0645ad; border: 2px solid #36c; transform: translateY(-200%); }
+        .skip-link:focus { transform: translateY(0); }
+        a:focus-visible { outline: 2px solid #36c; outline-offset: 3px; }
     </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WikiPsilocybin — The Living Encyclopedia of Psilocybin Research & News", "url": "https://wikipsilocybin.com/"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="site-top">
     <div class="site-top-inner">
@@ -110,7 +116,7 @@
         <a href="/events/">Recent events</a>
     </div>
 
-    <div class="content">
+    <div class="content" role="main" id="main-content" tabindex="-1">
 
         <h1 class="page-title">Psilocybin</h1>
         <p class="page-subtitle">From WikiPsilocybin, the free psilocybin encyclopedia &mdash; updated daily</p>
@@ -118,7 +124,7 @@
         <div class="infobox">
             <div class="infobox-title">Psilocybin</div>
             <div class="infobox-image">
-                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png" alt="Psilocybin molecular visualization">
+                <img src="https://d8j0ntlcm91z4.cloudfront.net/user_36uL1HV6CQZ9Ia0ikUE78jQJB98/hf_20260808_070842_c807ec80-0269-48c6-a459-06b22fa82a97.png" alt="Artist’s illustration of neural connectivity" width="1376" height="768" fetchpriority="high">
                 <div class="caption">Illustration of neural network connectivity (artist's rendering, not a research image)</div>
             </div>
             <div class="infobox-row">

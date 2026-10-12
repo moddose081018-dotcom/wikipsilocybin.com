@@ -60,9 +60,15 @@
             .events-table .col-date { width: auto; }
             .events-table .col-type { width: auto; }
         }
+
+        .skip-link { position: absolute; top: 8px; left: 8px; z-index: 10000; padding: 10px 14px; background: #fff; color: #0645ad; border: 2px solid #36c; transform: translateY(-200%); }
+        .skip-link:focus { transform: translateY(0); }
+        a:focus-visible { outline: 2px solid #36c; outline-offset: 3px; }
     </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Recent events — WikiPsilocybin", "url": "https://wikipsilocybin.com/events/"}</script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <div class="site-top">
     <div class="site-top-inner">
@@ -88,7 +94,7 @@
         <a href="/events/" class="active">Recent events</a>
     </div>
 
-    <div class="content">
+    <div class="content" role="main" id="main-content" tabindex="-1">
         <h1 class="page-title">Recent events</h1>
         <p class="page-subtitle">Research, policy and culture developments in psilocybin, organized by date. Every entry links to its primary source.</p>
 
