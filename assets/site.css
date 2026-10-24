@@ -1,0 +1,219 @@
+/*
+ * WikiPsilocybin design system (visual layer only).
+ * Loaded after each page's inline <style>, so equal-specificity rules here win.
+ * Rationale and sources: /docs/design/design-system.md
+ */
+
+:root {
+    /* Palette — contrast ratios are listed in docs/design/design-system.md */
+    --ivory: #FAF7F0;        /* page background */
+    --surface: #FFFDF8;      /* article surface */
+    --panel: #F2EEE3;        /* infobox, TOC, source boxes */
+    --rule: #DDD5C4;         /* decorative dividers */
+    --ui-border: #8C8573;    /* borders that identify a control (>=3:1) */
+    --text: #23282A;         /* charcoal */
+    --muted: #565D5F;
+    --forest: #1E5234;       /* the one interactive colour */
+    --forest-dark: #143A24;
+    --forest-tint: #E6F0E8;
+    --visited: #5A4577;
+    --amber: #B8650A;        /* accent: rules and markers only, never body text */
+    --amber-text: #8A4A06;
+    --amber-tint: #FBF0DC;
+    --warn: #9E2A1E;
+    --warn-tint: #FBEDEA;
+    --focus: #23282A;
+
+    --serif: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --reading: var(--serif);
+    --measure: 68ch;
+    --radius: 6px;
+}
+
+/* Typography A/B variant: all-Inter. Enabled by /assets/site.js via ?type=sans */
+html.type-sans { --reading: var(--sans); }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+    font-family: var(--reading);
+    font-size: 1.125rem;          /* 18px */
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--ivory);
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+}
+
+/* ---------- Links: one colour, always underlined in prose ---------- */
+a { color: var(--forest); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: rgba(30, 82, 52, 0.45); }
+a:visited { color: var(--visited); text-decoration-color: rgba(90, 69, 119, 0.45); }
+a:hover { color: var(--forest-dark); text-decoration-color: currentColor; text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px;
+    box-shadow: 0 0 0 6px var(--surface);
+}
+#main-content:focus { outline: none; }
+#main-content:focus-visible { outline: none; box-shadow: none; }
+
+/* ---------- Header & navigation ---------- */
+.site-top { background: var(--surface); border-bottom: 1px solid var(--rule); border-top: 4px solid var(--forest); }
+.site-top-inner { max-width: 1120px; padding: 14px 24px; gap: 24px; flex-wrap: wrap; }
+.site-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+.site-title a, .site-title a:visited { color: var(--text); text-decoration: none; }
+.site-title small { font-family: var(--sans); font-size: 0.8125rem; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: 2px; }
+.site-nav { font-family: var(--sans); font-size: 0.9375rem; gap: 4px; flex-wrap: wrap; }
+.site-nav a, .site-nav a:visited {
+    color: var(--text); text-decoration: none; padding: 8px 10px; border-radius: var(--radius);
+    min-height: 24px; /* WCAG 2.2 2.5.8 target size */
+}
+.site-nav a:hover { background: var(--forest-tint); color: var(--forest-dark); }
+
+.page-wrap { max-width: 1120px; margin: 24px auto 0; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: 0 1px 2px rgba(35, 40, 42, 0.04); overflow: hidden; }
+.page-tabs { background: var(--surface); border-bottom: 1px solid var(--rule); padding: 0 24px; font-family: var(--sans); font-size: 0.9375rem; gap: 8px; }
+.page-tabs a, .page-tabs a:visited { color: var(--muted); text-decoration: none; padding: 12px 4px; margin-right: 12px; border-bottom: 3px solid transparent; }
+.page-tabs a:hover { color: var(--forest-dark); border-bottom-color: var(--rule); }
+.page-tabs a.active { color: var(--text); font-weight: 600; border-bottom-color: var(--forest); }
+
+.breadcrumb { font-family: var(--sans); font-size: 0.875rem; color: var(--muted); margin-bottom: 16px; }
+.breadcrumb a { font-size: inherit; }
+
+/* ---------- Article layout & hierarchy ---------- */
+.content { padding: 32px 48px 56px; }
+.content > p, .content > ul, .content > ol, .content > blockquote, .content > .hatnote,
+.content > .ambox, .content > .source-box, .content > .byline, .content > .page-subtitle { max-width: var(--measure); }
+
+.page-title { font-family: var(--serif); font-size: clamp(2rem, 1.4rem + 2.4vw, 2.75rem); font-weight: 600; line-height: 1.15; letter-spacing: -0.015em; border-bottom: none; padding-bottom: 0; margin-bottom: 8px; max-width: 30ch; }
+html.type-sans .page-title { font-family: var(--sans); letter-spacing: -0.025em; }
+.page-subtitle { font-family: var(--sans); font-size: 1rem; font-style: normal; color: var(--muted); margin-bottom: 24px; }
+.page-meta, .byline { font-family: var(--sans); font-size: 0.875rem; color: var(--muted); gap: 8px 16px; padding: 10px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-bottom: 24px; }
+.byline strong { color: var(--text); }
+
+h2, .content h2 { font-family: var(--reading); font-size: 1.625rem; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin: 48px 0 16px; }
+h3 { font-family: var(--reading); font-size: 1.25rem; font-weight: 600; line-height: 1.3; margin: 32px 0 10px; }
+html.type-sans h2, html.type-sans h3 { font-family: var(--sans); letter-spacing: -0.015em; }
+p { margin-bottom: 1.1em; line-height: 1.65; }
+ul, ol { margin: 0 0 1.1em 1.5em; }
+li { margin-bottom: 0.4em; line-height: 1.6; }
+strong { font-weight: 650; }
+
+.hatnote { font-family: var(--sans); font-style: normal; font-size: 0.9375rem; color: var(--muted); padding: 0 0 0 14px; border-left: 3px solid var(--rule); margin-bottom: 20px; }
+
+blockquote { border-left: 3px solid var(--amber); background: var(--panel); color: var(--text); font-style: normal; padding: 14px 20px; margin: 20px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+
+/* ---------- Evidence & credibility components ---------- */
+.infobox { width: 300px; margin: 4px 0 24px 32px; background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); font-family: var(--sans); font-size: 0.875rem; overflow: hidden; }
+.infobox-title { background: var(--forest); color: #fff; font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; padding: 10px 14px; text-align: left; }
+.infobox-image { background: var(--panel); }
+.infobox-image .caption { font-size: 0.8125rem; color: var(--muted); font-style: normal; }
+.infobox-row { border-top: 1px solid var(--rule); }
+.infobox-label { width: 112px; background: transparent; color: var(--muted); font-weight: 600; font-size: 0.8125rem; padding: 8px 10px 8px 14px; }
+.infobox-value { font-size: 0.8125rem; padding: 8px 14px 8px 4px; line-height: 1.5; }
+
+.toc { font-family: var(--sans); font-size: 0.9375rem; background: var(--panel); border: 1px solid var(--rule); border-left: 3px solid var(--forest); border-radius: var(--radius); padding: 16px 20px; margin: 0 0 28px; min-width: 260px; }
+.toc-title { text-align: left; font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+.toc ol { padding-left: 20px; }
+.toc li { margin-bottom: 4px; }
+.toc a { text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Notice boxes: neutral = info, .help = verified/supportive, .warn = risk */
+.ambox { font-family: var(--sans); font-size: 0.9375rem; line-height: 1.55; background: var(--panel); border: 1px solid var(--rule); border-left: 4px solid var(--amber); border-radius: var(--radius); padding: 14px 18px; margin: 20px 0; }
+.ambox.help { background: var(--forest-tint); border-left-color: var(--forest); }
+.ambox.warn { background: var(--warn-tint); border-left-color: var(--warn); }
+
+/* Primary-source box: the evidence behind an event page */
+.source-box { font-family: var(--sans); font-size: 0.9375rem; background: var(--surface); border: 1px solid var(--rule); border-left: 4px solid var(--forest); border-radius: var(--radius); padding: 16px 20px; margin: 28px 0; }
+.source-box strong { font-size: 0.75rem; letter-spacing: 0.08em; color: var(--forest); margin-bottom: 6px; }
+
+.signal-badge { font-size: 0.75rem; letter-spacing: 0.06em; color: var(--forest); background: var(--forest-tint); padding: 2px 8px; border-radius: 999px; }
+
+/* Inline citation markers: larger hit area, still unobtrusive */
+sup.ref { font-family: var(--sans); font-size: 0.7rem; line-height: 0; }
+sup.ref a { text-decoration: none; padding: 0 2px; }
+sup.ref a:hover { text-decoration: underline; }
+
+.refs { font-family: var(--sans); font-size: 0.875rem; color: var(--text); }
+.refs ol { margin-left: 1.5em; max-width: 80ch; }
+.refs li { margin-bottom: 10px; line-height: 1.55; padding-left: 4px; }
+.refs li:target { background: var(--amber-tint); outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 2px; }
+.refs li::marker { color: var(--muted); }
+
+.see-also ul { max-width: var(--measure); }
+
+/* ---------- Tables ---------- */
+.wikitable, .events-table { font-family: var(--sans); font-size: 0.9375rem; border-collapse: collapse; width: 100%; }
+.wikitable th, .wikitable td, .events-table th, .events-table td { border: none; border-bottom: 1px solid var(--rule); padding: 10px 12px; }
+.wikitable th, .events-table th { background: var(--panel); color: var(--text); font-size: 0.8125rem; font-weight: 600; text-align: left; }
+.events-table tr:nth-child(even) { background: transparent; }
+.events-table tbody tr:hover { background: var(--ivory); }
+.month-heading { font-family: var(--reading); }
+
+/* ---------- Recent events list (homepage) ---------- */
+.recent-events { overflow: hidden; font-family: var(--sans); background: var(--panel); border: 1px solid var(--rule); border-radius: var(--radius); padding: 18px 22px; margin-bottom: 32px; }
+.recent-events h3 { font-family: var(--sans); font-size: 0.8125rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); border-bottom: 1px solid var(--rule); padding-bottom: 8px; margin: 0 0 4px; }
+.event-list li { font-size: 0.9375rem; padding: 10px 0; gap: 12px; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+.event-date { font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; min-width: 92px; }
+.event-link a { font-size: 0.9375rem; }
+.event-tag { font-family: var(--sans); font-size: 0.6875rem; letter-spacing: 0.05em; padding: 2px 8px; border-radius: 999px; }
+.tag-research { background: var(--forest-tint); color: var(--forest); }
+.tag-policy { background: var(--warn-tint); color: var(--warn); }
+.tag-culture { background: var(--amber-tint); color: var(--amber-text); }
+
+/* ---------- Actions ---------- */
+/* Secondary, text-style actions already in the content */
+.view-all-link, .back-link { font-family: var(--sans); font-size: 0.9375rem; font-weight: 600; }
+.view-all-link { text-align: left; margin-top: 12px; }
+.back-link { margin-top: 32px; }
+/* Button components for future descriptive CTAs (see docs/design/components.md) */
+.btn { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 20px; border-radius: var(--radius); font-family: var(--sans); font-size: 1rem; font-weight: 600; line-height: 1.2; text-decoration: none; cursor: pointer; border: 2px solid var(--forest); transition: background-color .15s, color .15s; }
+.btn-primary, .btn-primary:visited { background: var(--forest); color: #fff; }
+.btn-primary:hover { background: var(--forest-dark); border-color: var(--forest-dark); color: #fff; }
+.btn-secondary, .btn-secondary:visited { background: transparent; color: var(--forest); }
+.btn-secondary:hover { background: var(--forest-tint); color: var(--forest-dark); }
+
+/* ---------- Footer ---------- */
+.footer { max-width: 1120px; font-family: var(--sans); font-size: 0.875rem; color: var(--muted); border-top: none; padding: 32px 24px 48px; line-height: 1.6; }
+.footer-links { gap: 8px 20px; }
+
+/* ---------- Link previews (homepage script) ---------- */
+.wp-preview { font-family: var(--sans); background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: 0 8px 24px rgba(35, 40, 42, 0.12); }
+.wp-preview-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--text); }
+.wp-preview-text { font-size: 0.8125rem; color: var(--muted); }
+
+.skip-link { font-family: var(--sans); background: var(--surface); color: var(--forest); border: 2px solid var(--forest); border-radius: var(--radius); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+    .content { padding: 24px 24px 40px; }
+    .infobox { float: none; width: 100%; margin: 0 0 24px 0; }
+}
+@media (max-width: 720px) {
+    body { font-size: 1.0625rem; } /* 17px on phones */
+    .site-top-inner { padding: 12px 16px 0; gap: 8px; }
+    /* Keep navigation available on phones (was hidden): a scrollable row */
+    .site-nav { display: flex; flex-wrap: nowrap; overflow-x: auto; width: calc(100% + 32px); margin: 0 -16px; padding: 4px 12px 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .site-nav a { white-space: nowrap; flex: 0 0 auto; }
+    .page-wrap { margin-top: 0; border-radius: 0; border-left: none; border-right: none; }
+    .page-tabs { padding: 0 16px; }
+    .content { padding: 20px 16px 32px; }
+    h2, .content h2 { font-size: 1.4375rem; margin-top: 40px; }
+    h3 { font-size: 1.1875rem; }
+    .toc { display: block; min-width: 0; }
+    .wikitable, .events-table { display: block; overflow-x: auto; }
+    .footer { padding: 24px 16px 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+
+@media print {
+    body, .page-wrap { background: #fff; }
+    .site-nav, .page-tabs, .skip-link, .wp-preview { display: none; }
+    a { color: var(--text); }
+}
+
+/* 404 page */
+body > main { max-width: 640px; margin: 4rem auto; padding: 32px; background: var(--surface); border: 1px solid var(--rule); border-top: 4px solid var(--forest); border-radius: var(--radius); }
+body > main h1 { font-family: var(--serif); font-weight: 600; font-size: 2rem; margin-bottom: 12px; }
